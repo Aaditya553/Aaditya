@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #loading {
+        background: url("../images/sasuke-uchiha-rainy-night.jpg") center
+          no-repeat;
+        height: 100vh;
+        width: 100%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body onload="loadGif()">
+    <div id="loading"></div>
+    <div id="main">
+      <button onclick="newDate()">click me</button>
+      <p id="jscss" onmouseover="onmouse()" onmouseout="onmouseOut()">
+        Lorem ipsum dolor sit.
+      </p>
+      <button id="onmousedown" onmousedown="onMouseDown()">submit</button>
+      <form action="">
+        <input
+          class="form-control"
+          id="amt"
+          name="vote"
+          style="width: 200px"
+          onchange="onChange1()"
+          placeholder="Enter number of vote"
+        />
+        <span id="total">0</span>
+        <p id="price"></p>
+      </form>
+    </div>
+    <script>
+      function newDate() {
+        document.getElementById("date").innerHTML = "This is on click event";
+      }
+      function onmouse() {
+        var x = document.getElementById("jscss");
+        x.style.backgroundColor = "red";
+        x.style.padding = "lrem";
+      }
+      function onmouseOut() {
+        var x = document.getElementById("jscss");
+        x.style.backgroundColor = "white";
+        x.style.padding = "0rem";
+      }
+      function onMouseDown() {
+        var x = document.getElementById("onmousedown");
+        x.style.backgroundColor = "green";
+        x.style.padding = "0.5rem 1rem";
+        x.style.color = "white";
+      }
+      function onChange() {
+        var amount = 10;
+        var inputAmount = document.getElementById("amt").value;
+        var total = amount * inputAmount;
+        document.getElementById("total").innerHTML = total;
+      }
+      const loadGif = () => {
+        var x = document.getElementById("loading");
+        var m = document.getElementById("main");
+
+        x.style.display = "block";
+        m.style.display = "none";
+        setInterval(() => {
+          x.style.display = "none";
+          m.style.display = "block";
+        }, 3000);
+      };
+    </script>
+  </body>
+</html>
